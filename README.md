@@ -1,22 +1,50 @@
-# Banco de Dados da Cafeteria ☕  
+# ☕ Café do Bairro — Sistema Web + Banco de Dados
 
-Modelagem de banco de dados relacional desenvolvida como atividade do Módulo 3 — Projeto Integrador em TI II (UFMS Digital).
+Aplicação web desenvolvida no contexto do **Projeto Integrador em Tecnologia da Informação II (UFMS Digital)**, com foco em **desenvolvimento web dinâmico**, **modelagem de banco de dados relacional** e **controle de versão com Git e GitHub**.
 
-## 🗃️ Estrutura do Banco
-- **Tabela:** produtos  
-  - id (PK), nome, descricao, preco, estoque  
-- **Tabela:** pedidos  
-  - id (PK), produto_id (FK), quantidade, data_pedido  
+O projeto combina **HTML5, TailwindCSS e MySQL**, simulando o sistema online de uma cafeteria moderna e responsiva.
+
+---
+
+## 🚀 Funcionalidades
+
+- Página inicial estilizada com **Tailwind CSS** (totalmente responsiva e com dark mode);
+- Menu de produtos dinâmico (dados vindos do banco de dados);
+- Estrutura de banco relacional com **produtos, categorias, clientes e pedidos**;
+- API backend simples (em PHP ou Node.js) para integrar o banco ao frontend;
+- Controle de versão com GitHub.
+
+---
+
+## 🗃️ Estrutura do Banco de Dados
+
+Banco: `cafedobairro_db`
+
+### **Tabelas principais**
+
+| Tabela        | Descrição |
+|----------------|------------|
+| `categorias`   | Classifica produtos (ex: Bebidas, Sobremesas) |
+| `produtos`     | Itens vendidos, com preço, descrição e imagem |
+| `clientes`     | Armazena dados de contato dos clientes |
+| `pedidos`      | Registra pedidos com data, status e total automático |
+
+### **Relacionamentos**
+- 1 categoria → N produtos  
+- 1 cliente → N pedidos  
+- 1 pedido → 1 produto  
+
+---
 
 ## 💾 Script SQL
-Arquivo: `banco_cafeteria.sql`  
-Inclui comandos `CREATE TABLE` e `INSERT` com três registros por tabela.
 
-## 🔄 Versionamento
-Versionado com **Git** e publicado no **GitHub**:  
-[https://github.com/icaroaugusto137/cafeteria-db](https://github.com/icaroaugusto137/cafeteria-db)
+O arquivo `cafedobairro_db.sql` contém toda a estrutura do banco:
 
-## 👨‍💻 Autor
-Ícaro Augusto Silva Peres  
-Projeto Integrador em Tecnologia da Informação II — UFMS  
-Semestre 2025.1
+```sql
+CREATE DATABASE cafedobairro_db;
+USE cafedobairro_db;
+
+CREATE TABLE categorias (...);
+CREATE TABLE produtos (...);
+CREATE TABLE clientes (...);
+CREATE TABLE pedidos (...);
